@@ -1,0 +1,19 @@
+{
+  "name": "ollagraph-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing ollagraph.com web-automation + intelligence endpoints to OpenFang agents and any MCP client",
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": { "ollagraph-mcp": "dist/server.js" },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
