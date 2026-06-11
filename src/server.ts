@@ -33,7 +33,7 @@ type ToolDef = {
 
 const tools: ToolDef[] = [
   {
-    name: "ollagraph_scrape",
+    name: "scrape",
     description: "Fetch a single URL via ollagraph (200M owned proxies + stealth headers). Returns clean markdown extracted from the page. Use for research, content analysis, competitor scraping.",
     inputSchema: {
       type: "object",
@@ -47,7 +47,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ url: a.url, format: "markdown", stealth: a.stealth !== false }),
   },
   {
-    name: "ollagraph_aeo_page_audit",
+    name: "aeo_page_audit",
     description: "Run a real AEO (Answer Engine Optimization) audit on a URL. Returns overall_score (0-100), grade letter, and breakdowns of how likely the page is to be cited by ChatGPT, Claude, Perplexity, and other AI engines.",
     inputSchema: {
       type: "object",
@@ -58,7 +58,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ url: a.url }),
   },
   {
-    name: "ollagraph_aeo_citation_readiness",
+    name: "aeo_citation_readiness",
     description: "Citation-readiness score for AI search. Faster than the full page audit; focuses on structural signals AI crawlers look for. Returns score + specific blockers.",
     inputSchema: {
       type: "object",
@@ -69,7 +69,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ url: a.url }),
   },
   {
-    name: "ollagraph_seo_keyword_extract",
+    name: "seo_keyword_extract",
     description: "Extract weighted keyword list from a URL content. Returns ranked words with frequencies. Use for content briefs, competitor keyword analysis, identifying what a page actually ranks for.",
     inputSchema: {
       type: "object",
@@ -80,7 +80,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ url: a.url }),
   },
   {
-    name: "ollagraph_extract_structured",
+    name: "extract_structured",
     description: "Pull all structured data from a URL: JSON-LD, microdata, OpenGraph, Twitter Card, RDFa, meta tags. Returns a normalized JSON object. Use for competitor schema audits and company-page enrichment.",
     inputSchema: {
       type: "object",
@@ -91,7 +91,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ url: a.url }),
   },
   {
-    name: "ollagraph_intel_whois",
+    name: "intel_whois",
     description: "Live WHOIS lookup for a domain. Returns registrar, dates, contacts, name servers. Use for domain ownership research, security audits, M&A due diligence.",
     inputSchema: {
       type: "object",
@@ -102,7 +102,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ domain: a.domain }),
   },
   {
-    name: "ollagraph_intel_ssl",
+    name: "intel_ssl",
     description: "TLS certificate analysis for a domain. Returns issuer, validity dates, key size, SAN list, ciphers. Use for security audits, SOC 2 evidence, certificate expiry monitoring.",
     inputSchema: {
       type: "object",
@@ -113,7 +113,7 @@ const tools: ToolDef[] = [
     buildBody: (a) => ({ domain: a.domain }),
   },
   {
-    name: "ollagraph_convert_html_to_markdown",
+    name: "convert_html_to_markdown",
     description: "Convert a chunk of HTML into clean markdown. Use when you already have HTML and want a clean reading version. For URLs, prefer ollagraph_scrape instead.",
     inputSchema: {
       type: "object",
