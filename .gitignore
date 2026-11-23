@@ -1,4 +1,11 @@
-node_modules/
-dist/
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+dist
+build
+.venv
 .env
-graphify-out/
+.pytest_cache
+.mypy_cache
+.ruff_cache
