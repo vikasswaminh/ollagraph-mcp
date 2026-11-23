@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "ollagraph-mcp"
 version = "0.1.1"
-description = "MCP server for Ollagraph — exposes 212 web-infrastructure tools (one per API endpoint) to AI agents."
+description = "MCP server for Ollagraph — exposes every Ollagraph API endpoint as a tool for AI agents."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

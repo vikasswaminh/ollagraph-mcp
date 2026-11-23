@@ -1,7 +1,7 @@
 # Ollagraph MCP server
 
-An MCP server that exposes the full Ollagraph API (212 endpoints across fetch,
-extract, audit, intelligence, and AEO/SEO) as tools your AI agent can call directly.
+An MCP server that exposes the full Ollagraph API (one tool per endpoint, across
+fetch, extract, audit, intelligence, and AEO/SEO) as tools your AI agent can call directly.
 
 Works with Claude Desktop, Cursor, Cline, Continue, and any other MCP-capable
 client. Built on [FastMCP](https://github.com/jlowin/fastmcp) — the server is a
@@ -56,7 +56,7 @@ Opens the Inspector UI for poking the tools directly.
 
 ## What this gives you
 
-- 212 tools, one per Ollagraph endpoint, auto-generated from our OpenAPI spec
+- One tool per Ollagraph endpoint, auto-generated from our OpenAPI spec
   (the catalog tracks the live API — restart to pick up newly shipped endpoints)
 - Tool descriptions pulled from operation summaries — the LLM reads them to
   decide which to call
@@ -69,7 +69,7 @@ Opens the Inspector UI for poking the tools directly.
 | Env var | Default | Description |
 | --- | --- | --- |
 | `OLLAGRAPH_API_KEY` | _(required)_ | Bearer token from your Ollagraph account |
-| `OLLAGRAPH_API_URL` | `https://api.ollagraph.com` | Override for self-hosted deployments |
+| `OLLAGRAPH_API_URL` | `https://api.ollagraph.com` | API base URL; leave unset |
 | `OLLAGRAPH_TIMEOUT_SECONDS` | `60` | Per-tool-call HTTP timeout |
 
 ## License
